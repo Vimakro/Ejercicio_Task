@@ -1,0 +1,44 @@
+using System;
+using System.Threading;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Thread tarea1 = new Thread(Tarea1);
+        Thread tarea2 = new Thread(Tarea2);
+        Thread tarea3 = new Thread(Tarea3);
+
+        tarea1.Start();
+        tarea2.Start();
+        tarea3.Start();
+    }
+
+    static void Tarea1()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            Thread.Sleep(1000 * 5);
+            Console.WriteLine("Hilo 1 - Vuelta: " + i);
+        }
+    }
+
+    static void Tarea2()
+    {
+
+        for (int i = 1; i <= 5; i++)
+        {
+            Thread.Sleep(2000 * 3);
+            Console.WriteLine("Hilo 2 - Vuelta: " + i);
+        }
+    }
+
+    static void Tarea3()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            Thread.Sleep(500 * 7);
+            Console.WriteLine("Hilo 3 - Vuelta: " + i);
+        }
+    }
+}
